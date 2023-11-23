@@ -1,2 +1,1 @@
-# jasulkowski.github.io
-IpApi webb application.
+Rest application.

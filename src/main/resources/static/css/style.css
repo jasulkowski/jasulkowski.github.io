@@ -1,0 +1,203 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font:15px/1.3 'Open Sans', sans-serif;
+    color: #5e5b64;
+    text-align:center;
+}
+
+a, a:visited {
+    outline:none;
+    color:#389dc1;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+section, footer, header, aside, nav{
+    display: block;
+}
+
+/*-------------------------
+    Menu
+--------------------------*/
+
+nav{
+    display:inline-block;
+    margin:60px auto 45px;
+    background-color:#5597b4;
+    box-shadow:0 1px 1px #ccc;
+    border-radius:2px;
+}
+
+nav a{
+    display:inline-block;
+    padding: 18px 30px;
+    color:#fff !important;
+    font-weight:bold;
+    font-size:16px;
+    text-decoration:none !important;
+    line-height:1;
+    text-transform: uppercase;
+    background-color:transparent;
+
+    -webkit-transition:background-color 0.25s;
+    -moz-transition:background-color 0.25s;
+    transition:background-color 0.25s;
+}
+
+.nav-link {
+}
+
+.nav-link.active {
+    background-color: #e35885;
+}
+
+
+nav a:first-child{
+    border-radius:2px 0 0 2px;
+}
+
+nav a:last-child{
+    border-radius:0 2px 2px 0;
+}
+
+nav.home .home,
+nav.projects .projects,
+nav.services .services,
+nav.contact .contact{
+    background-color:#e35885;
+}
+
+p{
+    font-size:22px;
+    font-weight:bold;
+    color:#7d9098;
+}
+
+p b{
+    color:#ffffff;
+    display:inline-block;
+    padding:5px 10px;
+    background-color:#c4d7e0;
+    border-radius:2px;
+    text-transform:uppercase;
+    font-size:18px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: #5597b4;}
+
+.ip-lookup-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ip-inputs-container {
+    margin-bottom: 20px;
+}
+
+.ip-input-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ip-input {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.ip-button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-button {
+    margin-right: 5px;
+}
+
+.remove-button {
+    background-color: #f44336;
+}
+
+.lookup-button {
+    padding: 8px 15px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.add-ip-button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+
+.ip-table {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.ip-table th,
+.ip-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.ip-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.ip-table tr:nth-child(even) {background-color: #f2f2f2;}
+
+.ip-table tr:hover {background-color: #ddd;}
+
+.search-results-container {
+    margin-top: 30px;
+}
+
+

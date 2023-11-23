@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP WEBAPP</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="app">
+    <nav>
+        <a href="#" class="nav-link" :class="{active: active === 'home'}" v-on:click.prevent="makeActive('home')">Search IP</a>
+        <a href="#" class="nav-link" :class="{active: active === 'iptablelist'}" v-on:click.prevent="makeActive('iptablelist')">Table List</a>
+    </nav>
+
+    <div v-if="active === 'home'" class="ip-lookup-container">
+        <h1>IP Lookup</h1>
+        <div class="ip-inputs-container">
+            <div class="ip-input-container" v-for="(ipAddress, index) in ipAddressesArray" :key="index">
+                <input type="text" v-model="ipAddressesArray[index]" class="ip-input">
+                <button v-if="index !== 0" @click="removeIpAddress(index)" class="ip-button remove-button">-</button>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button @click="addIpAddress" class="ip-button add-ip-button">Add Ip</button>
+            <button @click="lookupIp" class="lookup-button">Lookup</button>
+        </div>
+
+        <div v-if="searchResults.length > 0" class="search-results-container">
+            <h2>Search Results</h2>
+            <table class="ip-table">
+                <tr>
+                    <th>IP</th>
+                    <th>Country Name</th>
+                    <th>Status</th>
+                </tr>
+                <tr v-for="result in searchResults" :key="result.ip">
+                    <td>{{ result.ip }}</td>
+                    <td>{{ result.countryName }}</td>
+                    <td>{{ result.status }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div v-if="active === 'iptablelist'">
+        <h1>IP Table List</h1>
+        <div v-if="ipDataList && ipDataList.length">
+            <table class="ip-table">
+                <tr>
+                    <th>IP Address</th>
+                    <th>Country Name</th>
+                </tr>
+                <tr v-for="data in ipDataList" :key="data.id">
+                    <td>{{ data.ip }}</td>
+                    <td>{{ data.countryName }}</td>
+                </tr>
+            </table>
+        </div>
+        <div v-else>
+            <p>No data available.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
